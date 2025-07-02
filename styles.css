@@ -1,0 +1,170 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --text: #fff; /* White text for contrast */
+    --completedText: #36bcde; /* Light gray for completed tasks */
+    --progressBackground: rgba(255, 255, 255, 0.2);
+    --progressFill: #36bcde; /* Neon green */
+    --inputBackground: rgba(0, 0, 0, 0.5);
+    --buttonBackground: #36bcde; /* Neon green */
+    --borderColor: #00f7ff; /* Neon cyan */
+    --checkboxColor: #36bcde;
+}
+
+body {
+    background-image: url('./img/bg.jpg');
+    background-size: cover;
+    background-position: center;
+    font-family: Arial, sans-serif;
+    color: var(--text);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    border: 8px solid var(--borderColor); /* Neon cyan border */
+    box-shadow: 0 0 15px var(--borderColor); /* Neon glow effect */
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 500px;
+    background: rgba(0, 0, 0, 0.6); /* Semi-transparent black for better readability */
+    padding: 20px;
+    border-radius: 10px;
+    border: 2px solid var(--borderColor); /* Neon cyan border */
+    box-shadow: 0 0 15px var(--borderColor); /* Neon glow effect */
+}
+
+.stats-container {
+    padding: 30px;
+    border-radius: 20px;
+    border: 2px solid var(--borderColor); /* Neon cyan border */
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.5); /* Semi-transparent black */
+}
+
+.details {
+    width: 100%;
+}
+
+#progress-bar {
+    width: 100%;
+    height: 10px;
+    background-color: var(--progressBackground);
+    border-radius: 5px;
+    margin-top: 20px;
+}
+
+#progress {
+    width: 0%;
+    height: 10px;
+    background-color: var(--progressFill);
+    border-radius: 10px;
+    transition: all 0.3s ease;
+    box-shadow: 0 0 10px var(--progressFill); /* Neon glow effect */
+}
+
+#numbers {
+    width: 100px;
+    height: 100px;
+    background: var(--buttonBackground);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    font-size: 30px;
+    font-weight: bold;
+    color: white;
+    box-shadow: 0 0 10px var(--buttonBackground); /* Neon glow effect */
+}
+
+form {
+    margin-top: 60px;
+    width: 100%;
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+input {
+    flex: 1;
+    padding: 16px;
+    background-color: var(--inputBackground);
+    border: 1px solid var(--borderColor); /* Neon cyan border */
+    border-radius: 10px;
+    outline: none;
+    color: var(--text);
+}
+
+button {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: var(--buttonBackground);
+    font-size: 30px;
+    font-weight: bold;
+    outline: none;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid var(--borderColor); /* Neon cyan border */
+    box-shadow: 0 0 10px var(--buttonBackground); /* Neon glow effect */
+}
+
+#task-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 30px;
+    width: 100%;
+    list-style: none;
+    padding: 0 10px; 
+}
+
+.taskItem {
+    display: flex;
+    background-color: var(--inputBackground);
+    padding: 10px;
+    border-radius: 10px;
+    justify-content: space-between;
+    align-items: center;
+    border: 1px solid var(--borderColor); /* Neon cyan border */
+}
+
+.task {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.task input {
+    width: 20px;
+    height: 20px;
+}
+
+.taskItem img {
+    width: 24px;
+    height: 24px;
+    margin: 0 10px;
+    cursor: pointer;
+}
+
+.completed p {
+    text-decoration: line-through;
+    color: var(--completedText);
+}
+.completed input[type="checkbox"] {
+    accent-color: var(--checkboxColor); /* Change checkbox color to blue */
+}
